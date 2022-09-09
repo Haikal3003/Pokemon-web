@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,900;1,400;1,700;1,800&family=Noto+Serif+Balinese&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --clr-light--: rgb(0, 255, 179);
+}
+
+.main-section {
+  text-align: center;
+  padding: 6% 3%;
+}
+
+.main-section::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 500px;
+  border-radius: 0 0 50% 50%;
+  background: rgb(11, 184, 132);
+  z-index: -1;
+}
+
+.heading h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.pokemon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 190px;
+  gap: 15px;
+}
+
+.pokemon-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 250px;
+  width: 100%;
+  height: 280px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 40px 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.pokemon-image {
+  max-width: 90px;
+  width: 100%;
+  z-index: 2;
+}
+
+.pokemon-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.pokemon-button {
+  position: absolute;
+  bottom: 30px;
+  font-size: 12px;
+  max-width: 120px;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgb(11, 184, 132);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pokemon-card:hover .details-stats {
+  transform: translateY(0);
+}
+
+.details-stats {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  padding: 20px 10px;
+  transition: 1s;
+  transform: translateY(100%);
+  background: rgb(32, 153, 117);
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #fff;
+  margin-bottom: 7px;
+}
+
+@media (max-width: 550px) {
+  .heading h1 {
+    position: absolute;
+
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .pokemon-card {
+    max-width: 280px;
+  }
+}
